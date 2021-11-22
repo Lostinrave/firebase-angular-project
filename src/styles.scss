@@ -5,3 +5,101 @@
 
 /* Importing Datepicker SCSS file. */
 @import "~ngx-bootstrap/datepicker/bs-datepicker";
+
+/* Spalvu kintamieji */
+$color-green: #0a7029;
+$color-green-yellow: #c8df52;
+$color-black: #282120;
+$color-white: #dbe8d8;
+
+body {
+  /* Nustatome pagrindine teksto spalva visai svetainei */
+  color: $color-white;
+}
+
+.text {
+  // Sugeneruojama: .text-red
+  &-dark-blue {
+    color: $color-green;
+  }
+
+  // Sugeneruojama: .text-gray
+  &-gray {
+    color: $color-green-yellow;
+  }
+
+  // Sugeneruojama: .text-black
+  &-black {
+    color: $color-black;
+  }
+
+  // Sugeneruojame : .text-white
+  &-white {
+    color: $color-white;
+  }
+}
+
+.quiz {
+  // 100vh - 100% lango aukscio
+  min-height: 100vh;
+  background-image: url("assets/img/yellow.jpg");
+  background-size: cover;
+  background-position: center center;
+
+  .quiz-wrapper {
+    padding: 90px 30px;
+  }
+}
+
+.quiz-title {
+  /* Ši dalis sugeneruos css klase: .quiz-title__subtitle */
+  &__subtitle {
+    color: $color-green;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  &__description {
+    font-size: 25px;
+    font-weight: 500;
+    @media screen and (max-width: 768px){
+        font-size: initial;
+    }
+  }
+}
+
+.quiz-answer {
+  .card {
+    cursor: pointer;
+    background: $color-green-yellow;
+  }
+
+  &__number {
+    font-size: 30px;
+    width: 50px;
+    border: 1px solid $color-green-yellow;
+    text-align: center;
+    margin-right: 40px;
+    background: $color-white;
+    font-weight: 700;
+    color: $color-green;
+  }
+  &__text {
+    font-size: 23px;
+    font-weight: 600;
+    color: $color-green;
+    @media screen and (max-width: 576px){
+        font-size: initial;
+    }
+  }
+
+  &.selected {
+    .quiz-answer__text {
+      color: $white;
+    }
+
+    .card {
+      background: $color-green;
+    }
+  }
+}
