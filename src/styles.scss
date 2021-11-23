@@ -103,3 +103,14 @@ body {
     }
   }
 }
+
+.quiz-actions {
+  background: $color-white;
+  padding: 20px 30px;
+  width: 90%;
+  margin: 0 auto;
+  .btn-actions {
+    background: $color-green-yellow;
+    color: $color-white;
+  }
+}

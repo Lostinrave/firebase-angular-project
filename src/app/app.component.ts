@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public title = 'quiz';
-
+  public currentQuestion: number = 1;
+  public progress: number = 0;
   public answers : Array<any> = [
     "Atsakymas 1",
     "Atsakymas 2",
@@ -16,5 +17,11 @@ export class AppComponent {
   ];
   constructor() {
 
+  }
+
+  nextQuestion(){
+    this.currentQuestion;
+
+    // this.progress = 
   }
 }
