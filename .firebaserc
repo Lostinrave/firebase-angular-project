@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-quiz-18eba": {
+      "hosting": {
+        "firebase-angular-project": [
+          "angular-quiz-18eba"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-quiz-18eba"
+  }
+}
