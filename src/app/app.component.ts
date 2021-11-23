@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-root',
@@ -16,13 +18,26 @@ export class AppComponent {
     "Atsakymas 3",
     "Atsakymas 4",
   ];
-  constructor() {
-
+  constructor(db: AngularFireDatabase) {
+    db.list('answers').valueChanges()
+    .subscribe((data) =>{
+      this.answers = data;
+    })
   }
 
   nextQuestion(){
-    this.currentQuestion++;
-    this.progress = this.currentQuestion / this.answers.length  * 100;
-    console.log("Progress: " + this.progress);
+    if(this.progress < 100){
+      this.currentQuestion++;
+      this.progress = this.currentQuestion / this.answers.length  * 100;
+      console.log("Progress: " + this.progress);
+    }
+  }
+
+  previousQuestion(){
+    if(this.progress > 0){
+      this.currentQuestion--;
+      this.progress = this.progress - 25;
+      console.log("Progress: " + this.progress);
+    }
   }
 }

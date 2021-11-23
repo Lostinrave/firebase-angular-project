@@ -67,6 +67,26 @@ body {
     }
   }
 }
+.quiz-answers-container {
+  /*
+  TODO: Kaip padaryti, kad tai butu dinamine reiksme
+  priklausoma nuo .quiz-actions aukscio
+  */
+
+  /*
+  Boostrap responsive breakpoints dokumentacija:
+  https://getbootstrap.com/docs/5.0/layout/breakpoints/
+  Daugiau apie SCSS mixins:
+  https://glennmccomb.com/articles/useful-sass-scss-media-query-mixins-for-bootstrap/
+  */
+  /*
+  Šis užrašymas sugeneruos:
+  @media (min-width: 768px) { ... }
+  */
+  @include media-breakpoint-down(md) {
+    padding-bottom: 250px;
+  }
+}
 
 .quiz-answer {
   .card {
@@ -105,12 +125,31 @@ body {
 }
 
 .quiz-actions {
-  background: $color-white;
+  background: $color-green;
   padding: 20px 30px;
   width: 90%;
   margin: 0 auto;
+  position: fixed;
+  bottom: 0;
+  left: 5%;
+  &__icon {
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    width: 150px;
+    max-width: 100%;
+    @include media-breakpoint-down(sm){
+      width: 100px;
+      opacity: 0.8;
+    }
+   
+  }
   .btn-actions {
     background: $color-green-yellow;
     color: $color-white;
+    @include media-breakpoint-down(sm){
+      width: 100%;
+      margin: .5rem 0 .5rem 0;
+    }
   }
 }
