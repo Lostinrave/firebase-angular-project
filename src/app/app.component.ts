@@ -8,7 +8,7 @@ import { AngularFireDatabase } from '@angular/fire/compat/database';
 })
 export class AppComponent {
   public title = 'quiz';
-  public currentQuestion: number = 1;
+  public currentQuestion: number = 0;
   public progress: number = 0;
   public answers : Array<any> = [
     "Atsakymas 1",
@@ -21,8 +21,8 @@ export class AppComponent {
   }
 
   nextQuestion(){
-    this.currentQuestion;
-
-    // this.progress = 
+    this.currentQuestion++;
+    this.progress = this.currentQuestion / this.answers.length  * 100;
+    console.log("Progress: " + this.progress);
   }
 }
