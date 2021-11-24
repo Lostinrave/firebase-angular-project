@@ -50,14 +50,14 @@
       <div class="quiz-actions__icon">
         <img class="mw-100" src="assets/img/quiz.png" alt="quiz">
       </div>
-      <div class="col-md-3">
-        <button class="btn btn-actions text-uppercase fw-bold" (click)="previousQuestion()">Previous question</button>
+      <div class="col-sm-3">
+        <button class="btn btn-actions text-uppercase fw-bold" (click)="previousQuestion()">Previous</button>
       </div>
-      <div class="col-md-6">
+      <div class="col-sm-6">
         <progressbar [value]="progress" type="warning"></progressbar>
       </div>
-      <div class="col-md-3">
-        <button class="btn btn-actions text-uppercase fw-bold" (click)="nextQuestion()">Next question</button>
+      <div class="col-sm-3 text-sm-end">
+        <button class="btn btn-actions text-uppercase fw-bold " (click)="nextQuestion()">Next</button>
       </div>
     </div>
   </div>

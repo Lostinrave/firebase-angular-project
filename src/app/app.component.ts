@@ -12,14 +12,11 @@ export class AppComponent {
   public title = 'quiz';
   public currentQuestion: number = 0;
   public progress: number = 0;
-  public answers : Array<any> = [
-    "Atsakymas 1",
-    "Atsakymas 2",
-    "Atsakymas 3",
-    "Atsakymas 4",
-  ];
+  public answers : Array<any> = [];
+  public quizQuestions : Array<any> = [];
+
   constructor(db: AngularFireDatabase) {
-    db.list('answers').valueChanges()
+    db.list('quizes/abc').valueChanges()
     .subscribe((data) =>{
       this.answers = data;
     })
